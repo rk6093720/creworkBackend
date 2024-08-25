@@ -27,6 +27,8 @@ const createTask =async (req,res)=>{
     }
 }
 const getTask = async(req,res)=>{
+    console.log("auth");              
+    console.log("mid", req.user )
     try{
         const task = await TaskModal.find();
         return res.status(200).json({status:"success",msg:"Data is getting", data:{task}})
